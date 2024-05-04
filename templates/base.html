@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Movie Explorer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Movie Explorer</h1>
+        <a href="{% url 'upload_file' %}" class="button">Enter as Admin</a>
+        <a href="{% url 'movie-list' %}" class="button">Enter as User</a>
+    </div>
+</body>
+</html>
+    

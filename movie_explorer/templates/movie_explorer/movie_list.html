@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Explorer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean and modern font */
+            background-color: #232F34; /* Dark slate background for contrast */
+            color: #F9AA33; /* Golden text color for a vibrant look */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        h1 {
+            text-align: center;
+            color: #4A6572; /* Subdued blue for the heading */
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #344955; /* Dark blue background for list items */
+            margin-top: 8px;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Deeper shadow for more depth */
+            transition: all 0.3s ease-in-out;
+        }
+        li:hover {
+            transform: scale(1.03); /* Subtle zoom effect on hover */
+            background: #4A6572; /* Lighter blue when hovered */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            text-decoration: none;
+            color: #F9AA33; /* Maintaining the golden color for links */
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        a:hover {
+            color: #FFD700; /* Brighter gold on hover for contrast */
+        }
+        .container {
+            width: 80%;
+            max-width: 640px; /* Slightly larger max width for better spacing */
+            background: #2F3E46; /* Subtle contrast to body's background */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* Stronger shadow around the container */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Explore Movies</h1>
+        <ul>
+            {% for movie in movies %}
+            <li><a href="{% url 'movie-detail' movie.pk %}">{{ movie.title }}</a></li>
+            {% empty %}
+            <li>No movies found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

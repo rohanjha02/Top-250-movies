@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ movie.title }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            width: 80%;
+            max-width: 640px;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+        strong {
+            color: #000;
+        }
+        a {
+            background-color: #5c67f2;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #4a54e1;
+        }
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ movie.title }}</h1>
+        <p><strong>Year:</strong> {{ movie.year }}</p>
+        <p><strong>Duration:</strong> {{ movie.duration }}</p>
+        <p><strong>Rated:</strong> {{ movie.rated_as }}</p>
+        <p><strong>Genre:</strong> {{ movie.genre }}</p>
+        <p><strong>Director:</strong> {{ movie.director }}</p>
+        <p><strong>Rating:</strong> {{ movie.rating }}</p>
+        <p><strong>Stars:</strong> {{ movie.stars }}</p>
+        <p><strong>Streaming On:</strong> {{ movie.streaming_on }}</p>
+        <footer>
+            <a href="{% url 'movie-list' %}">Back to List</a>
+        </footer>
+    </div>
+</body>
+</html>

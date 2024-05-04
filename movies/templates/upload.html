@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+    <style>
+        /* Set basic styling and full-screen flex container */
+        body {
+            font-family: 'Roboto', sans-serif; /* Consistent font usage */
+            background-color: #f4f4f9; /* Light background for contrast */
+            display: flex; /* Enables flexbox layout */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Removes default margin */
+        }
+
+        /* Style the form element */
+        form {
+            background: white; /* White background for the form */
+            padding: 20px; /* Spacing inside the form */
+            border-radius: 8px; /* Rounded corners for the form */
+            box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Subtle shadow for 3D effect */
+            width: 300px; /* Fixing form width for better control */
+        }
+
+        /* Style the heading */
+        h1 {
+            text-align: center; /* Center align the title */
+            color: #333; /* Dark grey color for the text */
+            padding-right: 2%;
+        }
+
+        /* Style the submit button */
+        button {
+            background-color: #5c67f2; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding inside the button */
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            width: 100%; /* Make the button expand to the full width of the form */
+            box-sizing: border-box; /* Include padding and border in the width */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        /* Hover effect for the button */
+        button:hover {
+            background-color: #4a54e1; /* Slightly darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload a CSV File</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
